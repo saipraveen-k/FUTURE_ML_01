@@ -12,6 +12,54 @@ from preprocess import load_data, preprocess_data, aggregate_daily_sales
 
 st.set_page_config(page_title="Sales & Demand Forecasting", layout="wide")
 
+# Custom CSS for color scheme
+st.markdown("""
+<style>
+    /* Main background and text colors */
+    .main .block-container {
+        background-color: #FFFFFF;
+    }
+    
+    /* Header styling - black and white theme */
+    .main-header {
+        color: #000000;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        border-bottom: 3px solid #000000;
+        padding-bottom: 10px;
+    }
+    
+    /* Metric cards - black and white theme */
+    .metric-card {
+        background-color: #F5F5F5;
+        border-left: 4px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    /* Sidebar styling - black and white theme */
+    .sidebar .sidebar-content {
+        background-color: #F0F0F0;
+    }
+    
+    /* Button styling - black and white theme */
+    .stButton>button {
+        background-color: #000000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    .stButton>button:hover {
+        background-color: #333333;
+    }
+    
+    /* Chart line colors - black */
+    .stLineChart line {
+        stroke: #000000;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 @st.cache_data
 def load_and_prepare_data():
     data_path = os.path.join(script_dir, '..', 'data', 'superstore.csv')
@@ -37,7 +85,7 @@ def load_forecast_data():
     return None
 
 def main():
-    st.title("📊 Sales & Demand Forecasting Dashboard")
+    st.markdown('<h1 class="main-header">📊 Sales & Demand Forecasting Dashboard</h1>', unsafe_allow_html=True)
     st.markdown("This dashboard provides an overview of historical sales data and predicts future demand using Machine Learning.")
     
     # Load Data
