@@ -1,0 +1,30 @@
+MODEL EVALUATION METRICS
+========================
+Model: Random Forest
+MAE: 1700.1663004593497
+RMSE: 2375.3168390638425
+------------------------
+Model: ARIMA
+MAE: 1765.5544300090357
+RMSE: 2505.551914946707
+
+
+BUSINESS INSIGHTS & EXPLANATION
+===============================
+
+1. Trends (Growth/Decline):
+   - The initial baseline exploration indicates periods of strong intermittent sales spikes, primarily driven by high-value corporate/bulk orders.
+   - The overall trend suggests a healthy baseline but high volatility. Identifying the macro factors behind the growth in specific months could unlock further potential.
+
+2. Seasonality (Weekly/Monthly):
+   - There is observable seasonality in the dataset. Our time-based features (month, day_of_week) enable the Random Forest model to capture mid-week lulls versus weekend spikes, as well as holiday-driven peaks.
+   - The ARIMA model is configured to understand autoregressive dependencies, recognizing momentum leading up to peak seasons.
+
+3. Peak Demand Periods:
+   - The models predict the next 30 days, highlighting days with substantially higher expected sales.
+
+How the Business Can Use It:
+- Inventory Planning: Ensures stock is available precisely when the model predicts high-volume days.
+- Staff Allocation: Optimize warehouse and fulfillment center staffing before large predicted sales days.
+- Budget Forecasting: Provide finance teams with realistic 30-day cash flow projections.
+- Risk Reduction: Flag anomalously slow periods to the marketing team for promotional efforts.
